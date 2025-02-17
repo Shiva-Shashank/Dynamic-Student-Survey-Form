@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body class="survey-page d-flex">
+    <div class="container">
+        <div class="container info-box" style="color: white;text-align: center;margin-top: 50px">
+            <h1>Student Survey</h1>
+        </div>
+        <div class="container survey-page-body">
+            <form id="surveyForm" autocomplete="on" [formGroup]="surveyForm" (ngSubmit)="onSubmit()"
+                style="margin-bottom: 50px;margin-top: 25px">
+                <div class="form-group">
+                    <label for="firstName">First Name</label><span class="required">*</span>
+                    <input autofocus type="text" class="form-control" name="firstName" id="firstName" placeholder="Tony"
+                        required
+                        formControlName="firstName"
+                        >
+                        <div class="field-required" *ngIf="surveyForm.get('firstName')?.invalid && surveyForm.get('firstName')?.touched">
+                            {{ surveyForm.get('firstName')?.hasError('required') ? 'This field is required' : '' }}
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label><span class="required">*</span>
+                    <input autofocus type="text" class="form-control" name="lastName" id="lastName" placeholder="Stark"
+                        required
+                        formControlName="lastName"
+                        >
+                        <div class="field-required" *ngIf="surveyForm.get('lastName')?.invalid && surveyForm.get('lastName')?.touched">
+                            {{ surveyForm.get('lastName')?.hasError('required') ? 'This field is required' : '' }}
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label for="streetAddress">Street Address</label><span class="required">*</span>
+                    <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="Apt Number,Street"
+                        required
+                        formControlName="streetAddress"
+                        >
+                        <div class="field-required" *ngIf="surveyForm.get('streetAddress')?.invalid && surveyForm.get('streetAddress')?.touched">
+                            {{ surveyForm.get('streetAddress')?.hasError('required') ? 'This field is required' : '' }}
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label><span class="required">*</span>
+                    <input type="text" class="form-control" name="city" id="city" placeholder="Fairfax" required
+                    formControlName="city"
+                    >
+                    <div class="field-required" *ngIf="surveyForm.get('city')?.invalid && surveyForm.get('city')?.touched">
+                        {{ surveyForm.get('city')?.hasError('required') ? 'This field is required' : '' }}
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label><span class="required">*</span>
+                    <input type="text" class="form-control" name="state" id="state" placeholder="Virginia" required
+                    formControlName="state"
+                    >
+                    <div class="field-required" *ngIf="surveyForm.get('state')?.invalid && surveyForm.get('state')?.touched">
+                        {{ surveyForm.get('state')?.hasError('required') ? 'This field is required' : '' }}
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP</label><span class="required">*</span>
+                    <input type="text" class="form-control" name="zip" id="zip" placeholder="22030" required
+                    formControlName="zip"
+                    >
+                    <div class="field-required" *ngIf="surveyForm.get('zip')?.invalid && surveyForm.get('zip')?.touched">
+                        {{ surveyForm.get('zip')?.hasError('required') ? 'This field is required' : '' }}
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone Number</label><span class="required">*</span>
+                    <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="1234567890"
+                        required
+                        formControlName="telephone"
+                        >
+                        <div class="field-required" *ngIf="surveyForm.get('telephone')?.invalid && surveyForm.get('telephone')?.touched">
+                            {{ surveyForm.get('telephone')?.hasError('required') ? 'This field is required' : '' }}
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label><span class="required">*</span>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="username@mail.com"
+                        required
+                        formControlName="email"
+                        >
+                        <div class="field-required" *ngIf="surveyForm.get('email')?.invalid && surveyForm.get('email')?.touched">
+                            {{ surveyForm.get('email')?.hasError('required') ? 'This field is required' : '' }}
+                          </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="url">URL</label><span class="required">*</span>
+                    <input type="url" class="form-control" name="url" id="url" placeholder="https://www.domain.com"
+                        required>
+                </div> -->
+                <div class="form-group">
+                    <label for="dateOfSurvey">Date of Survey</label><span class="required">*</span>
+                    <input type="date" class="form-control" name="dateOfSurvey" id="dateOfSurvey" placeholder="09/09/2023"
+                        required
+                        formControlName="dateOfSurvey"
+                        >
+                        <div class="field-required" *ngIf="surveyForm.get('dateOfSurvey')?.invalid && surveyForm.get('dateOfSurvey')?.touched">
+                            {{ surveyForm.get('dateOfSurvey')?.hasError('required') ? 'This field is required' : '' }}
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label>What did you like most about the campus?</label><span class="required">*</span>                  
+                    <div *ngFor="let option of likedMostOptions; let i=index" class="form-check">
+                        <label>
+                          <input class="form-check-input" type="checkbox" [value]="option.value" id="option.id" (change)="onCheckChange($event)">
+                          {{option.value}}
+                        </label>
+                      </div>
+                      <div class="field-required" *ngIf="surveyForm.get('likedMostOptions')?.invalid && surveyForm.get('likedMostOptions')?.touched">
+                          {{ surveyForm.get('likedMostOptions')?.hasError('required') ? 'This field is required' : '' }}
+                        </div>
+                      
+                </div>
+                <div class="form-group">
+                    <label>How did you become interested in the university?</label><span class="required">*</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interestedBy" value="Friends" id="interestFriends"
+                        formControlName="interestedBy"
+                        >
+                        <label class="form-check-label" role="button" for="interestFriends">Friends</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interestedBy" value="Television" id="interestTV"
+                        formControlName="interestedBy"
+                        >
+                        <label class="form-check-label" role="button" for="interestTV">Television</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interestedBy"
+                            value="Internet" id="interestInternet"
+                            formControlName="interestedBy"
+                        >
+                        <label class="form-check-label" role="button" for="interestInternet">Internet</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interestedBy" value="Other" id="interestOther"
+                        formControlName="interestedBy"
+                        >
+                        <label class="form-check-label" role="button" for="interestOther">Other</label>
+                    </div>
+                    <div class="field-required" *ngIf="surveyForm.get('interestedBy')?.invalid && surveyForm.get('interestedBy')?.touched">
+                        {{ surveyForm.get('interestedBy')?.hasError('required') ? 'This field is required' : '' }}
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="likelihood">Likelihood of Recommending this School</label><span
+                        class="required">*</span>
+                    <select class="form-control" name="likelihood" id="likelihood" required
+                    formControlName="likelihood"
+                    >
+                        <option></option>
+                        <option>Very Likely</option>
+                        <option>Likely</option>
+                        <option>Unlikely</option>
+                    </select>
+                    <div class="field-required" *ngIf="surveyForm.get('likelihood')?.invalid && surveyForm.get('likelihood')?.touched">
+                        {{ surveyForm.get('likelihood')?.hasError('required') ? 'This field is required' : '' }}
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Additional Comments</label>
+                    <textarea class="form-control" name="comments" id="comments" rows="3"
+                        placeholder="Add comments"
+                        formControlName="comments"
+                        ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary survey-button">Submit</button>
+                <button type="reset" class="btn survey-button btn-secondary">Reset</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,774 @@
+import './HomePageCSS.css';
+import React from 'react';
+
+
+
+const HomePage = (props) => {
+
+    return (
+        <>
+            <div style={{backgroundColor:'white'}}>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#home" id="tab1">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#intro" id="tab2">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#degrees" id="tab3">List of Degrees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#required_courses" id="tab4">Required Courses</a>
+                            </li>
+                            <li class="m-lg-auto navbar-nav ms-auto">
+                                <div>
+                                    <button class="survey-button rounded" style={{alignSelf:'end'}}>
+                                        <a href="/survey" style={{textDecoration:'none',color:'black'}} class="col p-2">CS
+                                            Department Survey</a>
+                                    </button>
+                                    <button class="survey-button rounded" style={{alignSelf:'end'}}>
+                                        <a href="/surveys-list" style={{textDecoration:'none',color:'black'}}
+                                            class="col p-2">Surveys List</a>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div style={{paddingTop:'80px'}}>
+
+
+                    {/* <!-- Button for the CS department page --> */}
+                    <div class="mt-3 about-department rounded p-5 mb-4" id="home">
+                        <h1 class="info-box rounded">Computer Science Department</h1>
+                        <h4 class="mt-5">
+                            Welcome to the Department of Computer Science at George Mason University!
+                        </h4>
+                        <p id="intro">
+                            With nearly 80 full-time faculty members, the CS Department at Mason is the largest department in
+                            the
+                            College of
+                            Engineering and Computing, one of the largest departments on campus, and the largest, fastest
+                            growing,
+                            and
+                            highest ranked Computer Science department in the Commonwealth of Virginia.
+                            <br></br>
+                            Today, not only is computing pervasive in society, but computational methods are used in almost
+                            every
+                            field of
+                            scholarly endeavor ranging from the arts and humanities to the hard sciences and engineering, as
+                            well as
+                            every
+                            sector of industry. Given the importance of computing in today's world, we strongly support the goal
+                            of
+                            "Computing for All", providing a diverse array of programs and courses in computing to students from
+                            all
+                            backgrounds and at all levels.
+                            <br></br>
+                            The department offers two Bachelor of Science programs with a total enrollment of over 2200
+                            students:
+                            the B.S.
+                            in Computer Science and the inter-disciplinary B.S. in Applied Computer Science; four M.S. programs
+                            in
+                            Computer
+                            Science, Information Systems, Information Security and Assurance, and Software Engineering with a
+                            total
+                            enrollment of almost 1000 students; and a Ph.D. program in Computer Science with nearly 200
+                            students.
+                            The
+                            department's faculty also teach and participate in the inter-disciplinary M.S. in Data Analytics
+                            Engineering and
+                            the Ph.D. in Information Technology offered by the Volgenau School of Engineering.
+                            <br></br>
+                            The department has a world-class faculty with research strengths in all areas of computing, and a
+                            strong
+                            commitment to teaching. Nearly half of our faculty were recruited in the past three years, and we
+                            now
+                            rank among
+                            the Top 40 Computer Science Departments in the US. Our faculty are engaged in leading edge research
+                            in
+                            their
+                            respective fields and have authored widely used textbooks and software. Our faculty's excellence is
+                            reflected in
+                            the awards we have received for our research (27 NSF CAREER and AFOSR Young Investigator awards, 7
+                            Mason
+                            Emerging Researcher awards) and teaching (8 Mason Excellence in Teaching awards), and our faculty
+                            include three
+                            ACM Fellows and five IEEE Fellows.
+                            <br></br>
+                            Several members of the faculty are actively engaged in inter-disciplinary research collaborations
+                            with
+                            colleagues from all over campus and other universities. Indeed inter-disciplinary collaboration in
+                            research and
+                            education is a key component of our departmental vision and strategic direction for the future,
+                            <br></br>
+                            The department has an active External Advisory Board consisting of industry leaders—many of whom are
+                            Mason
+                            alumni—who help the department build strong ties with alumni, local industry, government agencies,
+                            and
+                            local
+                            K-12 schools. The Board members also provide the department with critical guidance and feedback so
+                            that
+                            our
+                            courses and programs reflect the state of the art in computing technology, thereby helping us with
+                            our
+                            goal of
+                            graduating students that are well prepared to meet the workforce needs of the Commonwealth and the
+                            nation.
+                            <br></br>
+                            Last but not least, GMU is the largest and most diverse university in Virginia and the fastest
+                            growing
+                            public
+                            university in the nation. Correspondingly, the department is committed to the Mason vision of
+                            inclusiveness and
+                            accessibilty, and to efforts that increase the representation of women and underrepresented minority
+                            groups in
+                            our programs and in the field of computing at large.
+                        </p>
+                    </div>
+                    {/* <!-- The list of degrees --> */}
+                    <h2 id="degrees">MS Degrees</h2>
+                    <ul>
+                        <li>MS in Applied and Engineering Physics</li>
+                        <li>MS in Bioinformatics and Computational Biology</li>
+                        <li>MS in Bioinformatics Management</li>
+                        <li>MS in Biology</li>
+                        <li>MS in Chemistry</li>
+                        <li>MS in Climate Science</li>
+                        <li>MS in Computational Science</li>
+                        <li>MS in Computer Science</li>
+                        <li>MS in Data Analytics Engineering</li>
+                        <li>MS in Earth Systems Science</li>
+                        <li>MS in Environmental Science and Policy</li>
+                        <li>MS in Forensic Science</li>
+                        <li>MS in Geographic and Cartographic Science</li>
+                        <li>MS in Geoinformatics and Geospatial Intelligence</li>
+                        <li>MS in Mathematics</li>
+                    </ul>
+                    {/* <!-- The list of courses required by each degree -->
+            <!-- For each degree it shows as a button and on clicking each degree it will be expanded and
+            once expanded on clicking again it will be collapsed --> */}
+                    <h2 id="required_courses">Required Courses</h2>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-1">
+                            <h5>MS in Applied and Engineering Physics</h5>
+                        </div>
+                        <table id="table-1" class="collapse table" aria-labelledby="headingTwo">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ASTR 601</td>
+                                    <td>Computer Simulation in Astronomy</td>
+                                </tr>
+                                <tr>
+                                    <td>PHYS 510</td>
+                                    <td>Computational Physics I</td>
+                                </tr>
+                                <tr>
+                                    <td>PHYS 534</td>
+                                    <td>Introduction to Quantum Computation and Quantum Information</td>
+                                </tr>
+                                <tr>
+                                    <td>PHYS 502</td>
+                                    <td>Introduction to Quantum Mechanics and Atomic Physics</td>
+                                </tr>
+                                <tr>
+                                    <td>PHYS 620</td>
+                                    <td>Continuum Mechanics</td>
+                                </tr>
+                                <tr>
+                                    <td>PHYS 684</td>
+                                    <td>Quantum Mechanics I</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-2">
+                            <h5>MS in Bioinformatics and Computational Biology</h5>
+                        </div>
+                        <table id="table-2" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BINF 630</td>
+                                    <td>Bioinformatics Methods</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 631</td>
+                                    <td>Molecular Cell Biology for Bioinformatics I</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 634</td>
+                                    <td>Bioinformatics Programming</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 701</td>
+                                    <td>Systems Biology</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-3">
+                            <h5>MS in Bioinformatics Management</h5>
+                        </div>
+                        <table id="table-3" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BINF 530</td>
+                                    <td>Introduction to Bioinformatics Methods</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 531</td>
+                                    <td>Molecular Cell Biology for Bioinformatics</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 634</td>
+                                    <td>Bioinformatics Programming</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 730</td>
+                                    <td>Biological Sequence and Genome Analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 633</td>
+                                    <td>Molecular Biotechnology</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 650</td>
+                                    <td>Introduction to Bioinformatics Database Design</td>
+                                </tr>
+                                <tr>
+                                    <td>BINF 702</td>
+                                    <td>Biological Data Analysis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-4">
+                            <h5>MS in Biology</h5>
+                        </div>
+                        <table id="table-4" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BIOL 682</td>
+                                    <td>Advanced Eukaryotic Cell Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>BIOL 690</td>
+                                    <td>Introduction to Graduate Studies in Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>BIOL 689</td>
+                                    <td>Interdisciplinary Tools in the Biosciences</td>
+                                </tr>
+                                <tr>
+                                    <td>BIOL 691</td>
+                                    <td>Current Topics in Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>NEUR 702</td>
+                                    <td>Research Methods</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-5">
+                            <h5>MS in Chemistry</h5>
+                        </div>
+                        <table id="table-5" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CHEM 624</td>
+                                    <td>Principles of Chemical Separation</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 660</td>
+                                    <td>Protein Biochemistry</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 662</td>
+                                    <td>Modern Methods of Drug Discovery</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 651</td>
+                                    <td>Environmental Chemistry of Organic Substances</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 641</td>
+                                    <td>Solid State Chemistry</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 646</td>
+                                    <td>Bioinorganic Chemistry</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 613</td>
+                                    <td>Modern Polymer Chemistry</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 614</td>
+                                    <td>Physical Organic Chemistry</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-6">
+                            <h5>MS in Climate Science</h5>
+                        </div>
+                        <table id="table-6" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CLIM 511</td>
+                                    <td>Atmospheric Dynamics</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 512</td>
+                                    <td>Physical Oceanography</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 610</td>
+                                    <td>Introduction to the Physical Climate System</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 614</td>
+                                    <td>Land-Climate Interactions</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 690</td>
+                                    <td>Scientific Basis of Climate Change</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-7">
+                            <h5>MS in Computational Science</h5>
+                        </div>
+                        <table id="table-7" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CSI 690</td>
+                                    <td>Numerical Methods</td>
+                                </tr>
+                                <tr>
+                                    <td>CSI 695</td>
+                                    <td>Scientific Databases</td>
+                                </tr>
+                                <tr>
+                                    <td>CSI 702</td>
+                                    <td>High-Performance Computing</td>
+                                </tr>
+                                <tr>
+                                    <td>CSI 703</td>
+                                    <td>Scientific and Statistical Visualization</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-8">
+                            <h5>MS in Computer Science</h5>
+                        </div>
+                        <table id="table-8" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CS 583</td>
+                                    <td>Analysis of Algorithms</td>
+                                </tr>
+                                <tr>
+                                    <td>CS 530</td>
+                                    <td>Mathematical Foundations of Computer Science</td>
+                                </tr>
+                                <tr>
+                                    <td>CS 531</td>
+                                    <td>Computer Systems and Fundamentals of Systems Programming</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-9">
+                            <h5>MS in Data Analytics Engineering</h5>
+                        </div>
+                        <table id="table-9" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AIT 580</td>
+                                    <td>Analytics: Big Data to Information</td>
+                                </tr>
+                                <tr>
+                                    <td>CS 504</td>
+                                    <td>CoPrinciples of Data Management and Mining</td>
+                                </tr>
+                                <tr>
+                                    <td>DAEN 690</td>
+                                    <td>Data Analytics Project</td>
+                                </tr>
+                                <tr>
+                                    <td>OR 531</td>
+                                    <td>Introduction to Analytics and Modeling</td>
+                                </tr>
+                                <tr>
+                                    <td>STAT 515</td>
+                                    <td>Applied Statistics and Visualization for Analytics</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-10">
+                            <h5>MS in Earth Systems Science</h5>
+                        </div>
+                        <table id="table-10" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CLIM 610</td>
+                                    <td>Introduction to the Physical Climate System</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 614</td>
+                                    <td>Land-Climate Interactions</td>
+                                </tr>
+                                <tr>
+                                    <td>GEOL 532</td>
+                                    <td>Paleoclimatology</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 670</td>
+                                    <td>Introduction to Atmosphere and Weather</td>
+                                </tr>
+                                <tr>
+                                    <td>PHYS 575</td>
+                                    <td>Atmospheric Physics I</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 512</td>
+                                    <td>Physical Oceanography</td>
+                                </tr>
+                                <tr>
+                                    <td>CLIM 712</td>
+                                    <td>Physical and Dynamical Oceanography</td>
+                                </tr>
+                                <tr>
+                                    <td>GEOL 513</td>
+                                    <td>Hydrogeology</td>
+                                </tr>
+                                <tr>
+                                    <td>GEOL 565</td>
+                                    <td>Paleoceanography</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 656</td>
+                                    <td>The Hydrosphere</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-11">
+                            <h5>MS in Environmental Science and Policy</h5>
+                        </div>
+                        <table id="table-11" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EVPP 518</td>
+                                    <td>Conservation Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>EVPP 607</td>
+                                    <td>Fundamentals of Ecology</td>
+                                </tr>
+                                <tr>
+                                    <td>EVPP 648</td>
+                                    <td>Population Ecology</td>
+                                </tr>
+                                <tr>
+                                    <td>EVPP 632</td>
+                                    <td>Qualitative Research Methods for Environmental Scientists</td>
+                                </tr>
+                                <tr>
+                                    <td>EVPP 651</td>
+                                    <td>Multivariate Data Analysis for Ecology and Environmental Science</td>
+                                </tr>
+                                <tr>
+                                    <td>CONS 560</td>
+                                    <td>Statistics and Study Design in Ecology and Conservation</td>
+                                </tr>
+                                <tr>
+                                    <td>CONS 625</td>
+                                    <td>Generalized Linear and Mixed Models in Ecology and Conservation Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>GCH 604</td>
+                                    <td>Fundamentals of Epidemiology and Biostatistics</td>
+                                </tr>
+                                <tr>
+                                    <td>POGO 511</td>
+                                    <td>Introductory Data Analysis for Policy and Government</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-12">
+                            <h5>MS in Forensic Science</h5>
+                        </div>
+                        <table id="table-12" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FRSC 500</td>
+                                    <td>Introduction to Forensic Science</td>
+                                </tr>
+                                <tr>
+                                    <td>FRSC 510</td>
+                                    <td>Basic Crime Analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>FRSC 511</td>
+                                    <td>Advanced Crime Scene Analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>FRSC 530</td>
+                                    <td>Law and Forensic Science</td>
+                                </tr>
+                                <tr>
+                                    <td>FRSC 570</td>
+                                    <td>Trace and Physical Evidence Concepts</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-13">
+                            <h5>MS in Geographic and Cartographic Science</h5>
+                        </div>
+                        <table id="table-13" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>GGS 551</td>
+                                    <td>Cartographic Design</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 553</td>
+                                    <td>Geographic Information Systems</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 560</td>
+                                    <td>Quantitative Methods</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 579</td>
+                                    <td>Remote Sensing</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 689</td>
+                                    <td>Seminar in Geographic Thought and Methodology</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-14">
+                            <h5>MS in Geoinformatics and Geospatial Intelligence</h5>
+                        </div>
+                        <table id="table-14" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>GGS 550</td>
+                                    <td>Geospatial Science Fundamentals</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 553</td>
+                                    <td>Geographic Information Systems</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 579</td>
+                                    <td>Remote Sensing</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 664</td>
+                                    <td>Spatial Data Structures</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 684</td>
+                                    <td>Selected Topics in Geospatial Intelligence</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 685</td>
+                                    <td>Capstone Course in Geoinformatics</td>
+                                </tr>
+                                <tr>
+                                    <td>GGS 787</td>
+                                    <td>Scientific Data Mining for Geoinformatics</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                    <div class="mb-2">
+                        <div class="rounded course-header" data-toggle="collapse" data-target="#table-15">
+                            <h5>MS in Mathematics</h5>
+                        </div>
+                        <table id="table-15" class="collapse table">
+                            <thead>
+                                <tr>
+                                    <th>Course Number</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MATH 675</td>
+                                    <td>Linear Analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>MATH 621</td>
+                                    <td>Algebra I</td>
+                                </tr>
+                                <tr>
+                                    <td>MATH 631</td>
+                                    <td>Topology I: Topology of Metric Spaces</td>
+                                </tr>
+                                <tr>
+                                    <td>MATH 677</td>
+                                    <td>Ordinary Differential Equations</td>
+                                </tr>
+                                <tr>
+                                    <td>MATH 685</td>
+                                    <td>Numerical Analysis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br></br>
+
+                </div>
+            </div>
+        </>
+    )
+};
+
+
+export default HomePage;
